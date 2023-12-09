@@ -14,7 +14,7 @@ import java.security.Timestamp;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "UsageData")
+@Table(name = "usagedata")
 public class UsageData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

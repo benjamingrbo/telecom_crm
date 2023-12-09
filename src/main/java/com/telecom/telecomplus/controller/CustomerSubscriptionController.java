@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class CustomerSubscriptionController {
 
@@ -26,6 +27,11 @@ public class CustomerSubscriptionController {
     @GetMapping("/customerSubscription/getCustomerSubscriptionById/{id}")
     public Optional<CustomerSubscription> getCustomerSubscriptionById(@PathVariable Long id){
         return customerSubscriptionService.getCustomerSubscriptionById(id);
+    }
+
+    @GetMapping("/customerSubscription/getCustomerSubscriptionByCustomerId/{customerId}")
+    public Optional<CustomerSubscription> getCustomerSubscriptionByCustomerId(@PathVariable Long customerId){
+        return customerSubscriptionService.getCustomerSubscriptionByCustomerId(customerId);
     }
 
     @PutMapping("/customerSubscription/updateCustomerSubscription/{id}")

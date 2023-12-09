@@ -26,6 +26,10 @@ public class CustomerSubscriptionService {
         return customerSubscriptionRepository.findById(customerSubscriptionId);
     }
 
+    public Optional<CustomerSubscription> getCustomerSubscriptionByCustomerId(Long customerId){
+        return customerSubscriptionRepository.findByCustomerId(customerId);
+    }
+
     public CustomerSubscription updateCustomerSubscription(Long customerSubscriptionId, CustomerSubscription updatedCustomerSubscription) {
         return customerSubscriptionRepository.findById(customerSubscriptionId)
                 .map(customerSubscription -> {
