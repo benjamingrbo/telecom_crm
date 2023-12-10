@@ -9,7 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface CustomerSubscriptionRepository extends JpaRepository<CustomerSubscription, Long> {
-
     @Query(value = "SELECT * FROM customersubscription cs WHERE cs.customer_id = ?1", nativeQuery = true)
     Optional<CustomerSubscription> findByCustomerId(Long customerId);
 }

@@ -34,17 +34,17 @@ public class CustomerSubscriptionService {
         return customerSubscriptionRepository.findById(customerSubscriptionId)
                 .map(customerSubscription -> {
 
-                    if (updatedCustomerSubscription.getCustomer() != null) {
-                        customerSubscription.setCustomer(updatedCustomerSubscription.getCustomer());
+                    if (updatedCustomerSubscription.getCustomerId() != null) {
+                        customerSubscription.setCustomerId(updatedCustomerSubscription.getCustomerId());
                     }
-                    if (updatedCustomerSubscription.getPlan() != null) {
-                        customerSubscription.setPlan(updatedCustomerSubscription.getPlan());
+                    if (updatedCustomerSubscription.getPlanId() != null) {
+                        customerSubscription.setPlanId(updatedCustomerSubscription.getPlanId());
                     }
-                    if (updatedCustomerSubscription.getCustomPlan() != null) {
-                        customerSubscription.setCustomPlan(updatedCustomerSubscription.getCustomPlan());
+                    if (updatedCustomerSubscription.getCustomPlanId() != null) {
+                        customerSubscription.setCustomPlanId(updatedCustomerSubscription.getCustomPlanId());
                     }
-                    if (updatedCustomerSubscription.getDeviceInfo() != null) {
-                        customerSubscription.setDeviceInfo(updatedCustomerSubscription.getDeviceInfo());
+                    if (updatedCustomerSubscription.getDeviceInfoId() != null) {
+                        customerSubscription.setDeviceInfoId(updatedCustomerSubscription.getDeviceInfoId());
                     }
                     if (updatedCustomerSubscription.getTelephoneNumber() != null) {
                         customerSubscription.setTelephoneNumber(updatedCustomerSubscription.getTelephoneNumber());

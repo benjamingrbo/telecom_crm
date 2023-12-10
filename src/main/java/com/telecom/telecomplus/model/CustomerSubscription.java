@@ -20,21 +20,16 @@ public class CustomerSubscription {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
-    private Customer customer;
+    private Long customerId;
 
-    @ManyToOne
-    @JoinColumn(name = "plan_id")
-    private Plan plan;
 
-    @ManyToOne
-    @JoinColumn(name = "custom_plan_id")
-    private CustomPlan customPlan;
+    private Long planId;
 
-    @ManyToOne
-    @JoinColumn(name = "device_info_id")
-    private CustomerSubscriptionDeviceInfo deviceInfo;
+
+    private Long customPlanId;
+
+
+    private Long deviceInfoId;
 
     @Column(name = "telephone_number", nullable = false)
     private Long telephoneNumber;
