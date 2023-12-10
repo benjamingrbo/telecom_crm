@@ -39,8 +39,8 @@ public class FeedbackService {
                     if (updatedFeedback.getFeedbackDate() != null) {
                         feedback.setFeedbackDate(updatedFeedback.getFeedbackDate());
                     }
-                    if (updatedFeedback.getCustomer() != null) {
-                        feedback.setCustomer(updatedFeedback.getCustomer());
+                    if (updatedFeedback.getCustomerId() != null) {
+                        feedback.setCustomerId(updatedFeedback.getCustomerId());
                     }
 
                     return feedbackRepository.save(feedback);

@@ -29,8 +29,7 @@ public class Feedback {
     @Column(name = "feedback_date", nullable = false, columnDefinition = "DATE DEFAULT CURRENT_DATE")
     private Date feedbackDate;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
-    private Customer customer;
+
+    private Long customerId;
 
 }
