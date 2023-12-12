@@ -1,6 +1,7 @@
 package com.telecom.telecomplus.controller;
 
 import com.telecom.telecomplus.model.CustomerSubscription;
+import com.telecom.telecomplus.model.CustomerSubscriptionCustomerDTO;
 import com.telecom.telecomplus.service.CustomerSubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,12 @@ public class CustomerSubscriptionController {
     public Optional<CustomerSubscription> getCustomerSubscriptionById(@PathVariable Long id){
         return customerSubscriptionService.getCustomerSubscriptionById(id);
     }
+
+    @GetMapping("/customerSubscription/findCustomerSubscriptionsWithCustomers")
+    public List<CustomerSubscriptionCustomerDTO> findCustomerSubscriptionsWithCustomers(){
+        return customerSubscriptionService.findCustomerSubscriptionsWithCustomers();
+    }
+
 
     @GetMapping("/customerSubscription/getCustomerSubscriptionByCustomerId/{customerId}")
     public Optional<CustomerSubscription> getCustomerSubscriptionByCustomerId(@PathVariable Long customerId){

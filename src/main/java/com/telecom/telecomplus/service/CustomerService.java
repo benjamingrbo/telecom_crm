@@ -39,14 +39,14 @@ public class CustomerService {
                     if (updatedCustomer.getAddress() != null) {
                         customer.setAddress(updatedCustomer.getAddress());
                     }
-                    if (updatedCustomer.getLocation() != null) {
-                        customer.setLocation(updatedCustomer.getLocation());
+                    if (updatedCustomer.getLocationId() != null) {
+                        customer.setLocationId(updatedCustomer.getLocationId());
                     }
-                    if (updatedCustomer.getGender() != null) {
-                        customer.setGender(updatedCustomer.getGender());
+                    if (updatedCustomer.getGenderId() != null) {
+                        customer.setGenderId(updatedCustomer.getGenderId());
                     }
-                    if (updatedCustomer.getOccupation() != null) {
-                        customer.setOccupation(updatedCustomer.getOccupation());
+                    if (updatedCustomer.getOccupationId() != null) {
+                        customer.setOccupationId(updatedCustomer.getOccupationId());
                     }
 
                     return customerRepository.save(customer);

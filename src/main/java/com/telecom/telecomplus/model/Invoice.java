@@ -21,19 +21,13 @@ public class Invoice {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_subscription_id", nullable = false)
-    private CustomerSubscription customerSubscription;
+    private Long customerSubscriptionId;
 
-    @Column(name = "invoice_date", nullable = false, columnDefinition = "DATE DEFAULT CURRENT_DATE")
     private Date invoiceDate;
 
-    @Column(name = "due_date", nullable = false, columnDefinition = "DATE DEFAULT CURRENT_DATE")
     private Date dueDate;
 
-    @Column(name = "status", nullable = false)
     private String status;
 
-    @Column(name = "total_cost", nullable = false)
     private BigDecimal totalCost;
 }

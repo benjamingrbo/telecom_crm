@@ -18,24 +18,15 @@ public class Customer {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "address", nullable = false)
     private String address;
 
-    @ManyToOne
-    @JoinColumn(name = "location_id", nullable = false)
-    private Location location;
+    private Long locationId;
 
-    @ManyToOne
-    @JoinColumn(name = "gender_id", nullable = false)
-    private Gender gender;
+    private Long genderId;
 
-    @ManyToOne
-    @JoinColumn(name = "occupation_id", nullable = false)
-    private Occupation occupation;
+    private Long occupationId;
 }

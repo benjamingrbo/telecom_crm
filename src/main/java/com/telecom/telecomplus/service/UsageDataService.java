@@ -30,8 +30,8 @@ public class UsageDataService {
         return usageDataRepository.findById(userId)
                 .map(usageData -> {
 
-                    if (updatedUsageData.getCustomer() != null) {
-                        usageData.setCustomer(updatedUsageData.getCustomer());
+                    if (updatedUsageData.getCustomerId() != null) {
+                        usageData.setCustomerId(updatedUsageData.getCustomerId());
                     }
                     if(updatedUsageData.getDataUsage() != null) {
                         usageData.setDataUsage(updatedUsageData.getDataUsage());

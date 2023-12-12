@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 @Entity
 @Getter
@@ -21,19 +21,13 @@ public class UsageData {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
-    private Customer customer;
+    private Long customerId;
 
-    @Column(name = "data_usage", nullable = false)
     private BigDecimal dataUsage;
 
-    @Column(name = "call_minutes", nullable = false)
     private BigDecimal callMinutes;
 
-    @Column(name = "contacted_number", nullable = false)
     private Long contactedNumber;
 
-    @Column(name = "time_stamp", nullable = false)
     private Timestamp timeStamp;
 }

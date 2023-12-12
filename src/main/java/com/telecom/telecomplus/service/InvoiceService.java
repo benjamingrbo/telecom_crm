@@ -1,6 +1,7 @@
 package com.telecom.telecomplus.service;
 
 import com.telecom.telecomplus.model.Invoice;
+import com.telecom.telecomplus.model.InvoiceWithCustomerSubscriptionCustomerUsageDataDTO;
 import com.telecom.telecomplus.repository.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,12 +27,16 @@ public class InvoiceService {
         return invoiceRepository.findById(invoiceId);
     }
 
+    public List<InvoiceWithCustomerSubscriptionCustomerUsageDataDTO> findInvoiceWithUsageDataByInvoiceId(Long invoiceId){
+        return invoiceRepository.findInvoiceWithUsageDataByInvoiceId(invoiceId);
+    }
+
     public Invoice updateInvoice(Long invoiceId, Invoice updatedInvoice) {
         return invoiceRepository.findById(invoiceId)
                 .map(invoice -> {
 
-                    if (updatedInvoice.getCustomerSubscription() != null) {
-                        invoice.setCustomerSubscription(updatedInvoice.getCustomerSubscription());
+                    if (updatedInvoice.getCustomerSubscriptionId() != null) {
+                        invoice.setCustomerSubscriptionId(updatedInvoice.getCustomerSubscriptionId());
                     }
                     if (updatedInvoice.getInvoiceDate() != null) {
                         invoice.setInvoiceDate(updatedInvoice.getInvoiceDate());

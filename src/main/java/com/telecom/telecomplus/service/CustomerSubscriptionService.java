@@ -1,6 +1,7 @@
 package com.telecom.telecomplus.service;
 
 import com.telecom.telecomplus.model.CustomerSubscription;
+import com.telecom.telecomplus.model.CustomerSubscriptionCustomerDTO;
 import com.telecom.telecomplus.repository.CustomerSubscriptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,10 @@ public class CustomerSubscriptionService {
 
     public Optional<CustomerSubscription> getCustomerSubscriptionByCustomerId(Long customerId){
         return customerSubscriptionRepository.findByCustomerId(customerId);
+    }
+
+    public List<CustomerSubscriptionCustomerDTO> findCustomerSubscriptionsWithCustomers(){
+        return customerSubscriptionRepository.findCustomerSubscriptionsWithCustomers();
     }
 
     public CustomerSubscription updateCustomerSubscription(Long customerSubscriptionId, CustomerSubscription updatedCustomerSubscription) {
