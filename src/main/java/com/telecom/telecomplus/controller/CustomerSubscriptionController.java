@@ -35,6 +35,11 @@ public class CustomerSubscriptionController {
         return customerSubscriptionService.findCustomerSubscriptionsWithCustomers();
     }
 
+    @GetMapping("/customerSubscription/findCustomerSubscriptionWithCustomerByCustomerId/{id}")
+    public CustomerSubscriptionCustomerDTO findCustomerSubscriptionWithCustomerByCustomerId(@PathVariable Long id){
+        return customerSubscriptionService.findCustomerSubscriptionWithCustomerByCustomerId(id);
+    }
+
 
     @GetMapping("/customerSubscription/getCustomerSubscriptionByCustomerId/{customerId}")
     public Optional<CustomerSubscription> getCustomerSubscriptionByCustomerId(@PathVariable Long customerId){
