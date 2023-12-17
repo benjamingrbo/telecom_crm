@@ -22,10 +22,9 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> getUserById(Long userId) {
-        return userRepository.findById(userId);
+    public Optional<User> getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
-
     public User updateUser(Long userId, User updatedUser) {
         return userRepository.findById(userId)
                 .map(user -> {

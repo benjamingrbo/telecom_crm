@@ -1,6 +1,7 @@
 package com.telecom.telecomplus.controller;
 
 import com.telecom.telecomplus.model.Invoice;
+import com.telecom.telecomplus.model.InvoiceDTO;
 import com.telecom.telecomplus.model.InvoiceWithCustomerSubscriptionCustomerUsageDataDTO;
 import com.telecom.telecomplus.service.InvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class InvoiceController {
     }
 
     @GetMapping("/invoice/getAllInvoices")
-    public List<Invoice> getAllInvoices(){
+    public List<InvoiceDTO> getAllInvoices(){
         return invoiceService.getAllInvoices();
     }
 
@@ -33,6 +34,11 @@ public class InvoiceController {
     @GetMapping("/invoice/getInvoiceWithUsageDataByInvoiceId/{id}")
     public List<InvoiceWithCustomerSubscriptionCustomerUsageDataDTO> getInvoiceWithUsageDataByInvoiceId(@PathVariable Long id){
         return invoiceService.findInvoiceWithUsageDataByInvoiceId(id);
+    }
+
+    @GetMapping("/invoice/getInvoicesByCustomerId/{id}")
+    public List<InvoiceWithCustomerSubscriptionCustomerUsageDataDTO> getAllInvoicesByCustomerId(@PathVariable Long id){
+        return invoiceService.findAllInvoicesByCustomerId(id);
     }
 
     @PutMapping("/invoice/updateInvoice/{id}")
