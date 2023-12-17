@@ -1,6 +1,7 @@
 package com.telecom.telecomplus.service;
 
 import com.telecom.telecomplus.model.Feedback;
+import com.telecom.telecomplus.model.FeedbackDTO;
 import com.telecom.telecomplus.repository.FeedbackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,8 @@ public class FeedbackService {
         this.feedbackRepository = feedbackRepository;
     }
 
-    public List<Feedback> getAllFeedbacks() {
-        return feedbackRepository.findAll();
+    public List<FeedbackDTO> getAllFeedbacks() {
+        return feedbackRepository.getSveAA();
     }
 
     public Optional<Feedback> getFeedbackById(Long feedbackId) {

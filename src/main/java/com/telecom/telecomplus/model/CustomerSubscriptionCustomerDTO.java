@@ -36,4 +36,6 @@ public class CustomerSubscriptionCustomerDTO {
     private String lastName;
 
     private String address;
+
+    private Integer onNumberOfMonths;
 }

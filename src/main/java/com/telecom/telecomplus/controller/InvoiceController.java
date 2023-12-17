@@ -35,7 +35,6 @@ public class InvoiceController {
         return invoiceService.findInvoiceWithUsageDataByInvoiceId(id);
     }
 
-
     @PutMapping("/invoice/updateInvoice/{id}")
     public Invoice updateInvoice(@RequestBody Invoice updatedInvoice, @PathVariable  Long id){
         return invoiceService.updateInvoice(id, updatedInvoice);

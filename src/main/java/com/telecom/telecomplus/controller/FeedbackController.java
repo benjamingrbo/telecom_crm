@@ -1,6 +1,7 @@
 package com.telecom.telecomplus.controller;
 
 import com.telecom.telecomplus.model.Feedback;
+import com.telecom.telecomplus.model.FeedbackDTO;
 import com.telecom.telecomplus.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class FeedbackController {
     }
 
     @GetMapping("/feedback/getAllFeedbacks")
-    public List<Feedback> getAllFeedbacks(){
+    public   List<FeedbackDTO> getAllFeedbacks(){
         return feedbackService.getAllFeedbacks();
     }
 

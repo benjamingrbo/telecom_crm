@@ -1,6 +1,7 @@
 package com.telecom.telecomplus.controller;
 
 import com.telecom.telecomplus.model.Customer;
+import com.telecom.telecomplus.model.CustomerDTO;
 import com.telecom.telecomplus.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class CustomerController {
     }
 
     @GetMapping("/customer/getCustomerById/{id}")
-    public Optional<Customer> getCustomerById(@PathVariable Long id){
+    public Optional<CustomerDTO> getCustomerById(@PathVariable Long id){
         return customerService.getCustomerById(id);
     }
 
