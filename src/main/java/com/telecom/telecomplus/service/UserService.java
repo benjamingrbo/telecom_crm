@@ -22,6 +22,9 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public Optional<User> getUserById(Long id) {
+        return userRepository.findById(id);
+    }
     public Optional<User> getUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
@@ -38,11 +41,11 @@ public class UserService {
                     if(updatedUser.getEmail() != null){
                         user.setEmail(updatedUser.getEmail());
                     }
-                    if(updatedUser.getRole() != null){
-                        user.setRole(updatedUser.getRole());
+                    if(updatedUser.getRoleId() != null){
+                        user.setRoleId(updatedUser.getRoleId());
                     }
-                    if(updatedUser.getCustomer() != null){
-                        user.setCustomer(updatedUser.getCustomer());
+                    if(updatedUser.getCustomerId() != null){
+                        user.setCustomerId(updatedUser.getCustomerId());
                     }
 
                     return userRepository.save(user);
